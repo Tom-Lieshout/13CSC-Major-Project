@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Web App{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='all.css') }}">
+</head>
+<body>
+    <div class="top-bar">
+        <a href="/"><div class="logo"></div></a>
+
+        <div class="top-bar-icons">
+            {% if logged_in %}
+                <a href="{{ url_for('edit_events') }}"><button class="Edit2"></button></a>
+                <a href="{{ url_for('results') }}"><button class="Results2"></button></a>
+                <span class="username">Logged in as: {{ username }}</span>
+                <a href="{{ url_for('home') }}" class="topbar-icon-btn"><img src="{{ url_for('static', filename='Home.png') }}" alt="Home" class="topbar-icon-img"></a>
+                <a href="{{ url_for('edit_events') }}" class="topbar-icon-btn"><img src="{{ url_for('static', filename='Edit.png') }}" alt="Edit" class="topbar-icon-img"></a>
+                <a href="{{ url_for('results') }}" class="topbar-icon-btn"><img src="{{ url_for('static', filename='Results.png') }}" alt="Results" class="topbar-icon-img"></a>
+                <span class="topbar-divider"></span>
+                <form method="POST" action="{{ url_for('logout') }}" class="logout-form" style="display:inline;">
+                    <button type="submit" class="logout-btn">Logout</button>
+                </form>
+            {% else %}
+                <a href="{{ url_for('login') }}"><button class="Login2">Login</button></a>
+            {% endif %}
+        </div>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

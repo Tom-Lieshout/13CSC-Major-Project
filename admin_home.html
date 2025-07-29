@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div style="margin-top:200px;text-align:center;">
+    <p style="font-size:22px;color:#184287;font-weight:bold;"></p>
+    <a href="{{ url_for('edit_events') }}" class="nav-button" style="display:inline-block;margin:30px 20px 0 0;position:relative;">
+        <img src="{{ url_for('static', filename='Edit.png') }}" alt="Edit" style="position:absolute;top:90px;left:50%;transform:translateX(-40%);width:105px;height:105px;z-index:2;pointer-events:none;">
+        <span class="nav-button-text">Edit Events</span>
+    </a>
+    <a href="{{ url_for('results') }}" class="nav-button" style="display:inline-block;margin:30px 0 0 20px;position:relative;">
+        <img src="{{ url_for('static', filename='Results.png') }}" alt="Results" style="position:absolute;top:90px;left:50%;transform:translateX(-50%);width:105px;height:105px;z-index:2;pointer-events:none;">
+        <span class="nav-button-text">View Results</span>
+    </a>
+</div>
+{% endblock %}

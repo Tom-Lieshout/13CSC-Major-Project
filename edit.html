@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2>Edit Event: {{ event.name }} (Year {{ event.year }})</h2>
+
+    <!-- Sub-Events Table -->
+    <h3>Sub-Events</h3>
+    <form action="{{ url_for('add_sub_event', event_id=event.id) }}" method="POST" style="margin-bottom: 18px;">
+        <input type="text" name="sub_event_name" placeholder="New sub-event name" required>
+        <button type="submit" class="blue-button">Add Sub-Event</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Sub-Event Name</th>
+                <th>View Entries</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sub in sub_events %}
+            <tr>
+                <td>{{ sub.name }}</td>
+                <td>
+                    <a href="{{ url_for('edit_event', event_id=event.id) }}?sub_event_id={{ sub.id }}" class="blue-button">View</a>
+                </td>
+                <td>
+                    <form action="{{ url_for('delete_sub_event', event_id=event.id, sub_event_id=sub.id) }}" method="POST" onsubmit="return confirm('Delete this sub-event and all its entries?');">
+                        <button type="submit" class="delete-button">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% else %}
+            <tr><td colspan="3">No sub-events yet.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% if selected_sub_event_id %}
+    <h3 style="margin-top:32px;">Entries for Sub-Event</h3>
+    <form method="post" action="{{ url_for('add_entry', event_id=event.id) }}" style="margin-bottom: 16px;">
+        <input type="hidden" name="sub_event_id" value="{{ selected_sub_event_id }}">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="house" placeholder="House" required>
+        <input type="text" name="year" placeholder="Year Level" required>
+        <input type="text" name="time" placeholder="Time" required>
+        <button type="submit" class="blue-button" style="margin-top: 10px;">Add Entry</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>House</th>
+                <th>Year Level</th>
+                <th>Time</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in entries %}
+            <tr>
+                <td>{{ row.name }}</td>
+                <td>{{ row.house }}</td>
+                <td>{{ row.year }}</td>
+                <td>{{ row.time }}</td>
+                <td>
+                    <a href="{{ url_for('edit_entry', event_id=event.id, row_id=row.id) }}">Edit</a>
+                </td>
+                <td>
+                    <form action="{{ url_for('delete_entry', event_id=event.id, row_id=row.id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this entry?');">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% else %}
+            <tr><td colspan="6">No entries for this sub-event yet.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+    <div style="margin-top: 20px; text-align: right;">
+        <a href="{{ url_for('edit_events') }}" class="back-events-btn">Back to Events</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2></h2>
+    <h2></h2>
+
+
+    <form method="GET" action="{{ url_for('home') }}" id="eventForm">
+        <label>
+            <select name="event_id" onchange="document.getElementById('eventForm').submit();">
+                <option value="" disabled selected>Select Event</option>
+                {% for event in events %}
+                <option value="{{ event.id }}" {% if event.id|string == selected_event_id %}selected{% endif %}>{{ event.name }} ({{ event.year }})</option>
+                {% endfor %}
+            </select>
+        </label>
+        {% if sub_events and selected_event_id %}
+        <label>
+            <select name="sub_event_id" onchange="document.getElementById('eventForm').submit();">
+                <option value="">All Sub-Events</option>
+                {% for sub in sub_events %}
+                <option value="{{ sub.id }}" {% if sub.id|string == selected_sub_event_id %}selected{% endif %}>{{ sub.name }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        {% endif %}
+    </form>
+
+    {% if results %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Place</th>
+                    <th>Name</th>
+                    <th>House</th>
+                    <th>Year Level</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in results %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.house }}</td>
+                    <td>{{ row.year }}</td>
+                    <td>{{ row.time }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div style="margin-top: 20px; text-align: right;">
+            <form method="get" action="{{ url_for('export_results_pdf') }}" style="display:inline;">
+                {% if selected_event_id %}
+                <input type="hidden" name="event_id" value="{{ selected_event_id }}">
+                {% endif %}
+                {% if selected_sub_event_id %}
+                <input type="hidden" name="sub_event_id" value="{{ selected_sub_event_id }}">
+                {% endif %}
+                <button type="submit" class="blue-button">Export as PDF</button>
+            </form>
+        </div>
+    {% else %}
+    <p>No results found.</p>
+    {% endif %}
+</div>
+{% endblock %}

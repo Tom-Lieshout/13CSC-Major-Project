@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Edit Event</title>
+    <link rel="stylesheet" href="/static/all.css" />
+</head>
+<body>
+
+
+    <div class="container">
+        <h2>Edit Event: {{ event.name }} (Year {{ event.year }})</h2>
+
+        <form method="POST" action="{{ url_for('add_entry', event_id=event.id) }}" class="entry-form">
+            <label>Name:
+                <input type="text" name="name" required>
+            </label>
+            <label>House:
+                <input type="text" name="house" required>
+            </label>
+            <label>Time (MM:SS):
+                <input type="text" name="time" pattern="^\d{1,2}:\d{2}$" required placeholder="e.g. 01:23">
+            </label>
+            <button type="submit">Add Entry</button>
+        </form>
+
+        <h3>Entries</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>House</th>
+                    <th>Time</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in entries %}
+                <tr>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.house }}</td>
+                    <td>{{ row.time }}</td>
+                    <td>
+                        <a href="{{ url_for('delete_entry', event_id=event.id, row_id=row.id) }}"
+                           onclick="return confirm('Delete this entry?');">Delete</a>
+                    </td>
+                </tr>
+                {% else %}
+                <tr><td colspan="4">No entries yet.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

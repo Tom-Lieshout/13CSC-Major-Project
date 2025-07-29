@@ -1,0 +1,29 @@
+<a href="{{ url_for('home') }}">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+</a>
+<div class="top-bar">
+    <div class="left-icons">
+        {% if logged_in %}
+            <a href="{{ url_for('edit_events') }}">
+                <img src="{{ url_for('static', filename='edit-icon.png') }}" alt="Edit Events" class="icon">
+            </a>
+            <a href="{{ url_for('results') }}">
+                <img src="{{ url_for('static', filename='results-icon.png') }}" alt="Results" class="icon">
+            </a>
+        {% else %}
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='results-icon.png') }}" alt="Public Results" class="icon">
+            </a>
+        {% endif %}
+    </div>
+    <div class="right-buttons">
+        {% if logged_in %}
+            <span class="username">Logged in as {{ username }}</span>
+            <form method="POST" action="{{ url_for('logout') }}" style="display:inline;">
+                <button type="submit" class="logout-button">Logout</button>
+            </form>
+        {% else %}
+            <a href="{{ url_for('login') }}" class="login-button">Login</a>
+        {% endif %}
+    </div>
+</div>

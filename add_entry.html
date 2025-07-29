@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2>Add Entry to Event</h2>
+    <form method="POST">
+        <label>Sub-Event:
+            <select name="sub_event_id" required>
+                <option value="" disabled selected>Select Sub-Event</option>
+                {% for sub in sub_events %}
+                <option value="{{ sub.id }}" {% if sub.id|string == selected_sub_event_id %}selected{% endif %}>{{ sub.name }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <label>Name:
+            <input type="text" name="name" required>
+        </label>
+        <label>House:
+            <input type="text" name="house" required>
+        </label>
+        <label>Time (MM:SS):
+            <input type="text" name="time" pattern="\d{2}:\d{2}" required>
+        </label>
+        <button type="submit" class="blue-button" style="margin-top: 24px;">Add Entry</button>
+    </form>
+    <a href="{{ url_for('edit_event', event_id=event_id) }}" class="btn-small">Back to Event</a>
+</div>
+{% endblock %}

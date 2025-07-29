@@ -1,0 +1,888 @@
+.top-bar .logout-button {
+    background-color: #ff0000 !important;
+}
+.top-bar .logout-button:hover {
+    background-color: #ff3333 !important;
+}
+/* === Right Buttons Container === */
+.right-buttons {
+    padding-top: 40px;
+}
+/* === Top Bar Icon Buttons === */
+.topbar-icon-btn {
+    display: inline-block;
+    margin: 0 6px;
+    vertical-align: middle;
+}
+.topbar-icon-img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.topbar-icon-btn:hover .topbar-icon-img {
+    transform: scale(1.08);
+    box-shadow: 0 2px 8px rgba(24,66,135,0.12);
+}
+/* === Top Bar Divider === */
+.topbar-divider {
+    display: inline-block;
+    width: 2px;
+    height: 36px;
+    background: #fff;
+    margin: 0 12px;
+    vertical-align: middle;
+    border-radius: 1px;
+}
+/* === Back to Events Button === */
+.back-events-btn {
+    background-color: #184287;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 18px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+/* === Create Event Page === */
+.create-event-container {
+    max-width: 500px;
+    margin: 120px auto 40px auto;
+    background: #f8fbff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(24,66,135,0.10);
+    padding: 30px 40px;
+}
+.create-event-container h2 {
+    color: #184287;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.create-event-container form label {
+    display: block;
+    font-weight: bold;
+    color: #184287;
+    margin-bottom: 8px;
+}
+.create-event-container input[type="text"],
+.create-event-container input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 18px;
+    border: 1px solid #b3c6e0;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #f0f8ff;
+    color: #184287;
+}
+.create-event-container button.blue-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 17px;
+    margin-top: 10px;
+    background-color: #184287;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.create-event-container button.blue-button:hover {
+    background-color: #13406b;
+}
+.back-events-btn:hover {
+    background-color: #13406b;
+    color: #e0eaff;
+}
+/* === Dropdown Styling === */
+select {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 2px solid rgb(24, 66, 135);
+    border-radius: 5px;
+    background-color: #f0f8ff;
+    color: #184287;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 6px rgba(24, 66, 135, 0.08);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+select:focus {
+    outline: none;
+    border-color: rgb(134, 193, 234);
+    box-shadow: 0 0 8px rgba(134, 193, 234, 0.3);
+}
+/* === Table === */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    margin-top: 20px;
+    font-size: 14px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    text-align: center;
+}
+th {
+    background-color: rgb(24, 66, 135);
+    color: #ffffff;
+}
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tbody tr:hover {
+    background-color: #e3f0ff;
+}
+/* === Containers === */
+.container {
+    margin: 150px auto 40px;
+    max-width: 900px;
+    padding: 20px;
+    background-color: #ffffffcc;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+}
+/* === Header Bar === */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, rgb(24, 66, 135) 0px, rgb(24, 66, 135) 300px, rgb(134, 193, 234) 100%);
+    padding: 0;
+    margin: 0;
+    border-bottom: 2px solid #184287;
+    color: #fff;
+    z-index: 1000;
+}
+
+/* === Logo === */
+.logo {
+    width: 250px;
+    height: 250px;
+    background-image: url('/static/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 30px;
+    left: 20px;
+    z-index: 1010;
+}
+
+/* === Navigation Buttons === */
+/* === Navigation Buttons === */
+.Edit2, .Home2, .Results2, .Login2 {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+}
+
+.Login2 {
+    background: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    position: fixed;
+    top: 40px;
+    right: 60px;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    z-index: 1010;
+    display: block;
+}
+/* === Containers === */
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    text-align: center;
+}
+th {
+    background-color: rgb(24, 66, 135);
+    color: #ffffff;
+}
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tbody tr:hover {
+    background-color: #e3f0ff;
+}
+
+/* === Form === */
+form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+form label {
+    font-weight: bold;
+    color: rgb(24, 66, 135);
+    margin-right: 10px;
+}
+form select {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 2px solid rgb(24, 66, 135);
+    border-radius: 5px;
+    background-color: rgb(24, 66, 135);
+    color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+form select:focus {
+    outline: none;
+    border-color: rgb(134, 193, 234);
+    box-shadow: 0 0 5px rgba(134, 193, 234, 0.7);
+}
+
+/* === Buttons === */
+.blue-button {
+    background-color: #184287;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 18px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+.blue-button:hover {
+    background-color: #13406b;
+    color: #e0eaff;
+}
+.delete-button, .delete-form button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.delete-button:hover, .delete-form button:hover {
+    background-color: #c82333;
+}
+
+/* === Entry Form === */
+.entry-form {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+}
+.entry-form.expanded {
+    max-height: 500px;
+    opacity: 1;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+.entry-form form {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.entry-form label {
+    display: block;
+    margin-top: 110px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    max-width: 900px;
+    padding: 20px;
+    background-color: #ffffffcc;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+}
+
+/* === Flash Messages === */
+.flash-messages {
+    margin: 20px;
+}
+.flash-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.flash-message.success {
+    background-color: #e0ffe0;
+    color: #006600;
+}
+.flash-message.danger,
+.flash-message.error {
+    background-color: #ffe0e0;
+    color: #990000;
+}
+.flash-message.warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+/* === Misc Layout === */
+.home-buttons {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.nav-button {
+    background-color: #184287;
+    color: white;
+    margin: 110px 10px 0 10px;
+    font-size: 16px;
+    border: 30px;
+    border-color: #5f1919;
+    border-radius: 45px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    height: 280px;
+    width: 280px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-end;
+    padding-bottom: 24px;
+    padding-top: 12px;
+}
+.nav-button-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.nav-button:hover {
+    background-color: #0056b3;
+}
+.icon-button {
+    background-color: transparent;
+    border: none;
+    width: 126px;
+    height: 126px;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.edit-icon {
+    background-image: url('/static/Edit.png');
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.results-icon {
+    background-image: url('/static/Results.png');
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.Edit-text{
+    color:#fcfbfb;
+    transform: translate(14.7%, -5%);
+    font: Helvetica;
+}
+.Results-text{
+    color: #fcfbfb;
+    transform: translate(-20%, -170%);
+}
+.username {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #fff;
+}
+.logout-form {
+    display: inline;
+}
+
+
+.content {
+    padding: 20px;
+    max-height: 500px;
+    opacity: 1;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.toggle-button {
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.toggle-button:hover {
+    background-color: #0056b3;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form label {
+    font-weight: bold;
+    color: rgb(24, 66, 135);
+    margin-right: 10px;
+}
+
+form select {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 2px solid rgb(24, 66, 135);
+    border-radius: 5px;
+    background-color: white;
+    color: rgb(255, 255, 255);
+    background-color: rgb(24, 66, 135);
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form select:focus {
+    outline: none;
+    border-color: rgb(134, 193, 234);
+    box-shadow: 0 0 5px rgba(134, 193, 234, 0.7);
+}
+
+.home-buttons {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+
+.button1{
+        transform: translate(30%,30%) ;
+}
+
+.button2{
+        transform: translate(38%,30%) ;
+}
+
+
+.icon-button {
+    background-color: transparent;
+    border: none;
+    width: 126px;
+    height: 126px;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+
+.edit-icon {
+    background-image: url('/static/Edit.png');
+    transform: translate(-78.5%,-5%) ;
+}
+
+.results-icon {
+    background-image: url('/static/Results.png');
+    transform: translate(-469%, -4%) ;
+}
+
+.Edit-text{
+    color:#fcfbfb;
+    transform: translate(14.7%, -5%);
+    font: Helvetica;
+}
+
+.Results-text{
+    color: #fcfbfb;
+    transform: translate(-20%, -170%);
+}
+
+
+
+.nav-left {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+.rectangle-1 {
+    position: fixed;
+    top: 0;
+    left: 280px;
+    width: calc(100% - 280px);
+    height: 90px;
+    background: linear-gradient(270deg, rgb(134, 193, 234), rgb(24, 66, 135));
+    z-index: 1;
+}
+
+.rectangle-2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    background: rgb(24, 66, 135);
+    z-index: 2;
+}
+
+
+.Edit2, .Results2 {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 20px;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.Edit2 { left: 280px; }
+.Results2 { left: 340px; }
+
+/* User info & Logout */
+.user-info {
+    position: fixed;
+    top: 30px;
+    right: 160px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 4;
+}
+
+
+
+/* Correct .Login2 rule for login button */
+
+.user-info {
+    color: white;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 50px; /* vertically align with buttons */
+}
+
+
+
+/* Top bar user area (username + logout) */
+.user-area {
+    position: fixed;
+    top: 20px;
+    right: 120px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+}
+
+.username {
+    color: #fff;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.top-bar .logout-btn {
+    background-color: #ff0000 !important;
+}
+.top-bar .logout-btn:hover {
+    background-color: #ff3333 !important;
+}
+.logout-btn {
+    background-color: #ff0000 !important;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-right: 30px;
+}
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+
+/* Blue main buttons */
+
+/* Delete button style */
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+/* === Top Bar and Header === */
+.rectangle-1,
+.rectangle-2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #003366; /* Dark Blue */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.rectangle-2 {
+    top: 50px;
+    height: 5px;
+    background-color: #0055aa; /* Slightly lighter */
+/* Duplicate .logo rule removed */
+
+/* ...existing code... */
+
+    justify-content: space-between;
+    z-index: 1010;
+}
+
+/* Left side icons container */
+.topbar > a,
+.topbar > .top-icon {
+    margin-right: 15px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+/* Example icon backgrounds — replace URLs with your icons */
+.top-icon.home-icon {
+    background-image: url('/static/icons/home.svg');
+}
+.top-icon.edit-icon {
+    background-image: url('/static/icons/edit.svg');
+}
+.top-icon.results-icon {
+    background-image: url('/static/icons/results.svg');
+}
+.top-icon.login-icon {
+    background-image: url('/static/icons/login.svg');
+}
+
+/* User info container on right */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+/* === Flash Messages === */
+.flash-message {
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Different message types */
+.flash-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.flash-message.warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.flash-message.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* === Buttons === */
+button,
+.toggle-button {
+    background-color: #0055aa;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+.toggle-button:hover {
+    background-color: #003d7a;
+}
+
+/* === Form Inputs === */
+input[type="text"],
+input[type="number"],
+select {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+/* === Table Styling === */
+
+thead tr {
+    background-color: #0055aa;
+    color: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f7f9fc;
+}
+
+tbody tr:hover {
+    background-color: #e1ecff;
+}
+
+/* Delete button in table */
+.delete-button {
+    background-color: #cc3333;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #ff5555;
+}
+
+/* Top bar layout */
+
+/* Duplicate .logo rule removed */
+
+.top-bar-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Username and Logout */
+.username {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.logout-form {
+    display: inline;
+}
+
+/* Flash message styles */
+.flash-messages {
+    margin: 20px;
+}
+
+.flash-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.flash-message.success {
+    background-color: #e0ffe0;
+    color: #006600;
+}
+
+.flash-message.danger,
+.flash-message.error {
+    background-color: #ffe0e0;
+    color: #990000;
+}
+
+.flash-message.warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+/* Button styles (icons/buttons) */
+
+
+/* Layout and content block */
+.content {
+    padding: 20px;
+}
