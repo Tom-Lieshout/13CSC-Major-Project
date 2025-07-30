@@ -321,15 +321,18 @@ form select:focus {
     border-radius: 5px;
     font-weight: bold;
 }
+
 .flash-message.success {
     background-color: #e0ffe0;
     color: #006600;
 }
+
 .flash-message.danger,
 .flash-message.error {
     background-color: #ffe0e0;
     color: #990000;
 }
+
 .flash-message.warning {
     background-color: #fff3cd;
     color: #856404;
