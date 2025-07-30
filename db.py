@@ -19,3 +19,4 @@ def insert_default_users():
 
 if __name__ == '__main__':
     insert_default_users()
+

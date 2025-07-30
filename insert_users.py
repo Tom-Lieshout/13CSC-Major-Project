@@ -13,3 +13,4 @@ for username, password in users:
 conn.commit()
 conn.close()
 print("Users inserted.")
+

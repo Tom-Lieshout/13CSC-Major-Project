@@ -16,3 +16,4 @@ def clean_events_table():
 if __name__ == '__main__':
     clean_events_table()
     print('Cleaned events table.')
+    
