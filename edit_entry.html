@@ -1,3 +1,4 @@
+"""This is the code which diplays the page where logged in users can edit the different entries in events"""
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
@@ -20,4 +21,5 @@
     <a href="{{ url_for('edit_event', event_id=event_id) }}" class="btn-small">Back to Event</a>
 </div>
 {% endblock %}
+
 
